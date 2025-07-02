@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,19 +43,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-8px) scale(1.02); }
-        .neon-border { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-        .price-flash { animation: priceFlash 2s infinite; }
-        @keyframes priceFlash { 0%, 100% { color: #06b6d4; } 50% { color: #fbbf24; } }
+        .gradient-text { 
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text;
+        }
+        .card-hover { 
+            transition: all 0.3s ease; 
+        }
+        .card-hover:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+        .price-highlight { 
+            color: #06b6d4;
+            font-weight: 800;
+        }
+        .accent-border { 
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        @keyframes priceFlash { 
+            0%, 100% { color: #06b6d4; transform: scale(1); } 
+            50% { color: #fbbf24; transform: scale(1.1); } 
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px currentColor; }
+            100% { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+        }
+        @keyframes megaGlow {
+            0% { filter: drop-shadow(0 0 10px currentColor) brightness(1); }
+            100% { filter: drop-shadow(0 0 30px currentColor) brightness(1.2); }
+        }
+        @keyframes rainbowShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes gradientPulse {
+            0%, 100% { background-position: 0% 50%; opacity: 0.8; }
+            50% { background-position: 100% 50%; opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(-10px) rotate(240deg); }
+        }
+        
+        .simple-hover {
+            transition: all 0.3s ease;
+        }
+        .simple-hover:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-dark text-white overflow-x-hidden">
     <!-- Header with Urgency -->
     <header class="bg-dark-light shadow-2xl sticky top-0 z-50 border-b border-primary/20">
-        <div class="bg-gradient-to-r from-red-600 to-red-500 text-center py-2 text-sm font-bold animate-pulse">
-            🔥 OFERTA LIMITADA - Solo por tiempo limitado - Precios especiales 🔥
+        <div class="bg-gradient-to-r from-red-600 to-red-500 text-center py-3 text-sm font-bold">
+            🔥 OFERTA ESPECIAL - PRECIOS LIMITADOS 🔥
         </div>
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
@@ -85,8 +139,8 @@
     </header>
 
     <!-- Hero Section with Social Proof -->
-    <section class="relative bg-gradient-to-br from-dark via-dark-light to-primary/10 py-20 overflow-hidden">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+    <section class="relative bg-gradient-to-br from-primary/10 to-secondary/10 py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="mb-8">
                 <div class="inline-flex items-center space-x-2 bg-gold/20 text-gold px-4 py-2 rounded-full border border-gold/30 mb-6 animate-float">
@@ -95,7 +149,7 @@
                 </div>
             </div>
             
-            <h2 class="text-6xl md:text-7xl font-black mb-6 gradient-text leading-tight">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text leading-tight">
                 Trámites y Servicios
                 <br><span class="text-gold">Digitales Premium</span>
             </h2>
@@ -140,27 +194,33 @@
             </a>
         </div>
     </section>
+
+
+
     <!-- Trámites y Documentos with Urgency -->
-    <section class="py-20 bg-dark-light" id="servicios">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-red-500/20 text-red-400 px-4 py-2 rounded-full border border-red-500/30 mb-6 animate-pulse">
+    <section class="py-12 bg-dark-light" id="servicios">
+        <div class="container mx-auto px-3">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center space-x-2 bg-red-500/20 text-red-400 px-3 py-2 rounded-full border border-red-500/30 mb-4 animate-pulse text-sm">
                     <i class="fas fa-clock"></i>
                     <span class="font-semibold">ENTREGA EN MENOS DE 30 MINUTOS</span>
                 </div>
-                <h3 class="text-5xl font-black mb-6 gradient-text flex items-center justify-center space-x-4">
-                    <span class="text-5xl">🧾</span>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-black mb-4 gradient-text">
+                    <span class="text-3xl sm:text-4xl">🧾</span>
+                    <br class="sm:hidden">
                     <span>Trámites y Documentos Oficiales</span>
                 </h3>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    📋 <strong>Documentos 100% legales y certificados</strong> • 🔐 <strong>Con código QR oficial</strong> • 📱 <strong>Entrega inmediata por WhatsApp</strong>
+                <p class="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl mx-auto px-2">
+                    📋 <strong>Documentos 100% legales y certificados</strong><br class="sm:hidden">
+                    <span class="hidden sm:inline"> • </span>🔐 <strong>Con código QR oficial</strong><br class="sm:hidden">
+                    <span class="hidden sm:inline"> • </span>📱 <strong>Entrega inmediata por WhatsApp</strong>
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-primary/30 rounded-2xl p-8 card-hover neon-border relative overflow-hidden">
-                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
-                        ¡MÁS PEDIDO!
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                <div class="bg-gradient-to-br from-dark to-dark-light border border-primary/30 rounded-xl p-6 card-hover accent-border">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        Popular
                     </div>
                     <div class="flex items-center space-x-4 mb-6">
                         <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center">
@@ -188,8 +248,8 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <div class="text-sm text-gray-400">Precio variable según estado</div>
-                            <div class="text-2xl font-black price-flash">Consultar precio</div>
-                            <div class="text-xs text-accent font-bold">¡Cotización gratis!</div>
+                            <div class="text-xl font-bold price-highlight">Consultar precio</div>
+                            <div class="text-xs text-accent">Cotización gratis</div>
                         </div>
                         <a href="https://wa.me/5213151149026?text=🧾 Hola! Necesito un ACTA DE NACIMIENTO certificada. ¿Cuál es el precio para mi estado?" 
                            class="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -411,29 +471,32 @@
     </section>
 
     <!-- Servicios Digitales Premium -->
-    <section class="py-20 bg-dark">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-purple-500/20 text-purple-400 px-4 py-2 rounded-full border border-purple-500/30 mb-6 animate-pulse">
+    <section class="py-12 bg-dark">
+        <div class="container mx-auto px-3">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center space-x-2 bg-purple-500/20 text-purple-400 px-3 py-2 rounded-full border border-purple-500/30 mb-4 animate-pulse text-xs sm:text-sm">
                     <i class="fas fa-crown"></i>
                     <span class="font-semibold">SERVICIOS PREMIUM A PRECIOS INCREÍBLES</span>
                 </div>
-                <h3 class="text-5xl font-black mb-6 gradient-text flex items-center justify-center space-x-4">
-                    <span class="text-5xl">💻</span>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-black mb-4 gradient-text">
+                    <span class="text-3xl sm:text-4xl">💻</span>
+                    <br class="sm:hidden">
                     <span>Cuentas y Suscripciones Digitales</span>
                 </h3>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    🎯 <strong>Hasta 80% de descuento</strong> • 🔒 <strong>Cuentas 100% funcionales</strong> • ⚡ <strong>Activación inmediata</strong>
+                <p class="text-sm sm:text-base md:text-lg text-gray-400 max-w-3xl mx-auto px-2">
+                    🎯 <strong>Hasta 80% de descuento</strong><br class="sm:hidden">
+                    <span class="hidden sm:inline"> • </span>🔒 <strong>Cuentas 100% funcionales</strong><br class="sm:hidden">
+                    <span class="hidden sm:inline"> • </span>⚡ <strong>Activación inmediata</strong>
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 <!-- Netflix Premium -->
-                <div class="bg-gradient-to-br from-dark-light to-red-900/20 border-2 border-red-500/30 rounded-2xl p-6 card-hover neon-border relative overflow-hidden">
-                    <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">
-                        ¡TOP VENTAS!
+                <div class="bg-gradient-to-br from-dark-light to-red-900/20 border border-red-500/30 rounded-xl p-6 card-hover simple-hover">
+                    <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        Top Ventas
                     </div>
-                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="flex items-center space-x-3 mb-4">
                         <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
                             <span class="text-white font-black text-xl">N</span>
                         </div>
@@ -461,15 +524,16 @@
                     </div>
                     <div class="flex items-center justify-between mb-4">
                         <div>
-                            <div class="text-xs text-gray-400 line-through">Precio oficial: $299</div>
-                            <div class="text-xl font-black price-flash">$65 MXN</div>
-                            <div class="text-xs text-green-400 font-bold">¡Ahorra $234!</div>
+                            <div class="text-sm text-gray-400 line-through">Precio oficial: $299</div>
+                            <div class="text-2xl font-bold text-red-400">$65 MXN</div>
+                            <div class="text-sm text-green-400 font-bold">Ahorra $234</div>
                         </div>
                     </div>
                     <a href="https://wa.me/5213151149026?text=🎬 ¡Hola! Quiero NETFLIX PREMIUM 4K por solo $65 MXN. ¿Está disponible?" 
                        class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
-                        🔥 Comprar Ahora
+                        Comprar Ahora
                     </a>
+                    </div>
                 </div>
 
                 <!-- Amazon Prime -->
@@ -769,76 +833,76 @@
     </section>
 
     <!-- Urgency CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-red-600 via-primary to-secondary relative overflow-hidden">
+    <section class="py-12 bg-gradient-to-r from-red-600 via-primary to-secondary relative overflow-hidden">
         <div class="absolute inset-0 bg-black/20"></div>
-        <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="container mx-auto px-3 text-center relative z-10">
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-5xl font-black mb-6 animate-pulse">⏰ ¡ÚLTIMAS HORAS! ⏰</h3>
-                <p class="text-2xl mb-8 font-bold">
-                    🔥 Precios especiales terminan pronto 🔥<br>
+                <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">⏰ Oferta por Tiempo Limitado</h3>
+                <p class="text-base sm:text-lg mb-6 font-semibold px-2">
+                    Precios especiales disponibles por poco tiempo<br>
                     <span class="text-gold">¡No te quedes sin tu servicio favorito!</span>
                 </p>
                 
                 <!-- Countdown Timer -->
-                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 mb-8 inline-block">
-                    <div class="text-sm text-gray-300 mb-2">Oferta termina en:</div>
-                    <div class="flex space-x-4 text-3xl font-black" id="countdown">
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-4 mb-6 inline-block">
+                    <div class="text-xs sm:text-sm text-gray-300 mb-2">Oferta termina en:</div>
+                    <div class="flex space-x-2 sm:space-x-4 text-xl sm:text-2xl font-black" id="countdown">
                         <div class="text-center">
-                            <div class="bg-white/20 rounded-lg px-3 py-2">23</div>
+                            <div class="bg-white/20 rounded-lg px-2 py-1 sm:px-3 sm:py-2">23</div>
                             <div class="text-xs mt-1">HORAS</div>
                         </div>
                         <div class="text-center">
-                            <div class="bg-white/20 rounded-lg px-3 py-2">45</div>
+                            <div class="bg-white/20 rounded-lg px-2 py-1 sm:px-3 sm:py-2">45</div>
                             <div class="text-xs mt-1">MIN</div>
                         </div>
                         <div class="text-center">
-                            <div class="bg-white/20 rounded-lg px-3 py-2">12</div>
+                            <div class="bg-white/20 rounded-lg px-2 py-1 sm:px-3 sm:py-2">12</div>
                             <div class="text-xs mt-1">SEG</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-4">
+                <div class="space-y-3">
                     <a href="https://wa.me/5213151149026?text=🔥 ¡HOLA! Quiero aprovechar la OFERTA ESPECIAL antes de que termine. ¿Qué servicios tienes disponibles?" 
-                       class="inline-flex items-center space-x-3 bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-black text-xl transition-all duration-300 shadow-2xl hover:shadow-white/50 animate-bounce-slow">
-                        <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
-                        <span>🚀 APROVECHAR OFERTA AHORA</span>
+                       class="inline-flex items-center space-x-2 bg-white text-primary hover:bg-gray-100 px-4 py-3 sm:px-6 sm:py-4 rounded-full font-black text-sm sm:text-lg transition-all duration-300 shadow-2xl hover:shadow-white/50 animate-bounce-slow">
+                        <i class="fab fa-whatsapp text-green-500 text-lg sm:text-xl"></i>
+                        <span>🚀 APROVECHAR OFERTA</span>
                     </a>
-                    <p class="text-sm opacity-90">⚡ Respuesta inmediata garantizada • 🎯 Asesoría personalizada</p>
+                    <p class="text-xs sm:text-sm opacity-90 px-2">⚡ Respuesta inmediata garantizada • 🎯 Asesoría personalizada</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Enhanced Footer -->
-    <footer class="bg-dark-light py-16 border-t border-primary/20">
-        <div class="container mx-auto px-4">
+    <footer class="bg-dark-light py-12 border-t border-primary/20">
+        <div class="container mx-auto px-3">
             <div class="text-center">
-                <div class="flex items-center justify-center space-x-4 mb-8">
-                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center animate-glow">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center animate-glow">
+                        <i class="fas fa-bolt text-white text-lg"></i>
                     </div>
                     <div>
-                        <h4 class="text-3xl font-black gradient-text">Weavy Plus</h4>
-                        <p class="text-gray-400">Tu socio digital confiable</p>
+                        <h4 class="text-2xl font-black gradient-text">Weavy Plus</h4>
+                        <p class="text-gray-400 text-sm">Tu socio digital confiable</p>
                     </div>
                 </div>
                 
-                <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
-                    <div class="bg-dark border border-primary/20 rounded-xl p-6">
-                        <i class="fas fa-shield-alt text-primary text-3xl mb-4"></i>
-                        <h5 class="font-bold text-lg mb-2">100% Seguro</h5>
-                        <p class="text-gray-400 text-sm">Todos nuestros servicios son completamente legales y seguros</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 max-w-4xl mx-auto">
+                    <div class="bg-dark border border-primary/20 rounded-xl p-4">
+                        <i class="fas fa-shield-alt text-primary text-2xl mb-3"></i>
+                        <h5 class="font-bold text-base mb-2">100% Seguro</h5>
+                        <p class="text-gray-400 text-xs sm:text-sm">Todos nuestros servicios son completamente legales y seguros</p>
                     </div>
-                    <div class="bg-dark border border-accent/20 rounded-xl p-6">
-                        <i class="fas fa-clock text-accent text-3xl mb-4"></i>
-                        <h5 class="font-bold text-lg mb-2">Entrega Rápida</h5>
-                        <p class="text-gray-400 text-sm">Documentos en 30 min, servicios digitales en 5 min</p>
+                    <div class="bg-dark border border-accent/20 rounded-xl p-4">
+                        <i class="fas fa-clock text-accent text-2xl mb-3"></i>
+                        <h5 class="font-bold text-base mb-2">Entrega Rápida</h5>
+                        <p class="text-gray-400 text-xs sm:text-sm">Documentos en 30 min, servicios digitales en 5 min</p>
                     </div>
-                    <div class="bg-dark border border-gold/20 rounded-xl p-6">
-                        <i class="fas fa-star text-gold text-3xl mb-4"></i>
-                        <h5 class="font-bold text-lg mb-2">+500 Clientes</h5>
-                        <p class="text-gray-400 text-sm">Miles de clientes satisfechos nos respaldan</p>
+                    <div class="bg-dark border border-gold/20 rounded-xl p-4">
+                        <i class="fas fa-star text-gold text-2xl mb-3"></i>
+                        <h5 class="font-bold text-base mb-2">+500 Clientes</h5>
+                        <p class="text-gray-400 text-xs sm:text-sm">Miles de clientes satisfechos nos respaldan</p>
                     </div>
                 </div>
 
@@ -857,17 +921,12 @@
         </div>
     </footer>
 
-    <!-- Enhanced WhatsApp Float Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <div class="relative">
-            <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-bounce font-bold">
-                ¡OFERTA!
-            </div>
-            <a href="https://wa.me/5213151149026" target="_blank" 
-               class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/50 transition-all duration-300 animate-pulse-slow">
-                <i class="fab fa-whatsapp text-white text-2xl"></i>
-            </a>
-        </div>
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <a href="https://wa.me/5213151149026" target="_blank" 
+           class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300">
+            <i class="fab fa-whatsapp text-white text-xl sm:text-2xl"></i>
+        </a>
     </div>
 
     <script>
@@ -952,5 +1011,5 @@
             });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9588d49407a6b6e5',t:'MTc1MTQwMzYwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9591e2acb0e585e7',t:'MTc1MTQ5ODU0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
