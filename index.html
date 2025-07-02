@@ -1,0 +1,956 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weavy Plus - Trámites y Servicios Digitales Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                        gold: '#fbbf24',
+                        dark: '#0f172a',
+                        'dark-light': '#1e293b'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #6366f1, 0 0 10px #6366f1, 0 0 15px #6366f1' },
+                            '100%': { boxShadow: '0 0 10px #8b5cf6, 0 0 20px #8b5cf6, 0 0 30px #8b5cf6' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px) scale(1.02); }
+        .neon-border { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+        .price-flash { animation: priceFlash 2s infinite; }
+        @keyframes priceFlash { 0%, 100% { color: #06b6d4; } 50% { color: #fbbf24; } }
+    </style>
+</head>
+<body class="bg-dark text-white overflow-x-hidden">
+    <!-- Header with Urgency -->
+    <header class="bg-dark-light shadow-2xl sticky top-0 z-50 border-b border-primary/20">
+        <div class="bg-gradient-to-r from-red-600 to-red-500 text-center py-2 text-sm font-bold animate-pulse">
+            🔥 OFERTA LIMITADA - Solo por tiempo limitado - Precios especiales 🔥
+        </div>
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-xl flex items-center justify-center animate-glow">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-black gradient-text">Weavy Plus</h1>
+                        <p class="text-xs text-gray-400">Tu socio digital confiable</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2 bg-green-500/20 px-3 py-2 rounded-full border border-green-500/30">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-green-400 text-sm font-medium">En línea ahora</span>
+                    </div>
+                    <a href="https://wa.me/5213151149026" target="_blank" 
+                       class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-3 rounded-full font-bold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl animate-bounce-slow">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Social Proof -->
+    <section class="relative bg-gradient-to-br from-dark via-dark-light to-primary/10 py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366f1" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="mb-8">
+                <div class="inline-flex items-center space-x-2 bg-gold/20 text-gold px-4 py-2 rounded-full border border-gold/30 mb-6 animate-float">
+                    <i class="fas fa-star"></i>
+                    <span class="font-semibold">⭐⭐⭐⭐⭐ +500 clientes satisfechos</span>
+                </div>
+            </div>
+            
+            <h2 class="text-6xl md:text-7xl font-black mb-6 gradient-text leading-tight">
+                Trámites y Servicios
+                <br><span class="text-gold">Digitales Premium</span>
+            </h2>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto font-light">
+                🚀 <strong>Entrega en menos de 30 minutos</strong> • 💯 <strong>100% Legal y Certificado</strong> • 🔒 <strong>Garantía Total</strong>
+            </p>
+
+            <!-- Trust Indicators -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+                <div class="bg-dark-light/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 neon-border">
+                    <div class="text-3xl font-black text-primary mb-2">+500</div>
+                    <div class="text-sm text-gray-400">Clientes Felices</div>
+                </div>
+                <div class="bg-dark-light/50 backdrop-blur-sm border border-accent/20 rounded-xl p-4 neon-border">
+                    <div class="text-3xl font-black text-accent mb-2">24/7</div>
+                    <div class="text-sm text-gray-400">Atención Inmediata</div>
+                </div>
+                <div class="bg-dark-light/50 backdrop-blur-sm border border-gold/20 rounded-xl p-4 neon-border">
+                    <div class="text-3xl font-black text-gold mb-2">100%</div>
+                    <div class="text-sm text-gray-400">Garantizado</div>
+                </div>
+                <div class="bg-dark-light/50 backdrop-blur-sm border border-green-500/20 rounded-xl p-4 neon-border">
+                    <div class="text-3xl font-black text-green-500 mb-2">30min</div>
+                    <div class="text-sm text-gray-400">Entrega Máxima</div>
+                </div>
+            </div>
+
+            <!-- Urgency CTA -->
+            <div class="bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <i class="fas fa-fire text-red-500 text-2xl animate-bounce"></i>
+                    <span class="text-xl font-bold text-red-400">¡OFERTA POR TIEMPO LIMITADO!</span>
+                    <i class="fas fa-fire text-red-500 text-2xl animate-bounce"></i>
+                </div>
+                <p class="text-gray-300">Aprovecha nuestros precios especiales antes de que suban. Solo hasta fin de mes.</p>
+            </div>
+
+            <a href="#servicios" class="inline-flex items-center space-x-3 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-primary/50 animate-glow">
+                <span>Ver Servicios Ahora</span>
+                <i class="fas fa-arrow-down animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+    <!-- Trámites y Documentos with Urgency -->
+    <section class="py-20 bg-dark-light" id="servicios">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-red-500/20 text-red-400 px-4 py-2 rounded-full border border-red-500/30 mb-6 animate-pulse">
+                    <i class="fas fa-clock"></i>
+                    <span class="font-semibold">ENTREGA EN MENOS DE 30 MINUTOS</span>
+                </div>
+                <h3 class="text-5xl font-black mb-6 gradient-text flex items-center justify-center space-x-4">
+                    <span class="text-5xl">🧾</span>
+                    <span>Trámites y Documentos Oficiales</span>
+                </h3>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    📋 <strong>Documentos 100% legales y certificados</strong> • 🔐 <strong>Con código QR oficial</strong> • 📱 <strong>Entrega inmediata por WhatsApp</strong>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-primary/30 rounded-2xl p-8 card-hover neon-border relative overflow-hidden">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold animate-pulse">
+                        ¡MÁS PEDIDO!
+                    </div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Actas de Nacimiento</h4>
+                            <p class="text-primary font-semibold">Certificadas • Todo México</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento oficial con código QR</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Válido en toda la República</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Entrega en 15-30 minutos</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según estado</div>
+                            <div class="text-2xl font-black price-flash">Consultar precio</div>
+                            <div class="text-xs text-accent font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=🧾 Hola! Necesito un ACTA DE NACIMIENTO certificada. ¿Cuál es el precio para mi estado?" 
+                           class="bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-accent/30 rounded-2xl p-8 card-hover neon-border">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Actas de Matrimonio</h4>
+                            <p class="text-accent font-semibold">Certificadas • Oficiales</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento legal certificado</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Aceptado en cualquier institución</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Proceso 100% seguro</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según estado</div>
+                            <div class="text-2xl font-black text-accent">Consultar precio</div>
+                            <div class="text-xs text-accent font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=💒 Hola! Necesito un ACTA DE MATRIMONIO certificada. ¿Cuál es el precio para mi estado?" 
+                           class="bg-gradient-to-r from-accent to-primary hover:from-primary hover:to-accent px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-secondary/30 rounded-2xl p-8 card-hover neon-border">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-file-invoice text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Constancia Fiscal SAT</h4>
+                            <p class="text-secondary font-semibold">Situación Fiscal</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento oficial del SAT</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Información actualizada</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Válido para trámites oficiales</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según tipo</div>
+                            <div class="text-2xl font-black text-secondary">Consultar precio</div>
+                            <div class="text-xs text-secondary font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=📊 Hola! Necesito mi CONSTANCIA DE SITUACIÓN FISCAL del SAT. ¿Cuál es el precio?" 
+                           class="bg-gradient-to-r from-secondary to-accent hover:from-accent hover:to-secondary px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-gold/30 rounded-2xl p-8 card-hover neon-border">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-gold to-orange-500 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Antecedentes No Penales</h4>
+                            <p class="text-gold font-semibold">Carta Oficial</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento oficial certificado</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Válido para empleos y trámites</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Proceso confidencial</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según estado</div>
+                            <div class="text-2xl font-black text-gold">Consultar precio</div>
+                            <div class="text-xs text-gold font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=🛡️ Hola! Necesito mi CARTA DE ANTECEDENTES NO PENALES. ¿Cuál es el precio para mi estado?" 
+                           class="bg-gradient-to-r from-gold to-orange-500 hover:from-orange-500 hover:to-gold px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-dark">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-red-500/30 rounded-2xl p-8 card-hover neon-border">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-500 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-balance-scale text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Actas de Divorcio</h4>
+                            <p class="text-red-400 font-semibold">Documentos Legales</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento legal certificado</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Proceso discreto y seguro</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Válido para nuevos trámites</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según estado</div>
+                            <div class="text-2xl font-black text-red-400">Consultar precio</div>
+                            <div class="text-xs text-red-400 font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=⚖️ Hola! Necesito un ACTA DE DIVORCIO certificada. ¿Cuál es el precio para mi estado?" 
+                           class="bg-gradient-to-r from-red-500 to-pink-500 hover:from-pink-500 hover:to-red-500 px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-dark to-dark-light border-2 border-green-500/30 rounded-2xl p-8 card-hover neon-border">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-cross text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-2xl font-bold">Actas de Defunción</h4>
+                            <p class="text-green-400 font-semibold">Trámite Seguro</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Documento oficial certificado</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Proceso confidencial</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>✅ Atención especializada</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-sm text-gray-400">Precio variable según estado</div>
+                            <div class="text-2xl font-black text-green-400">Consultar precio</div>
+                            <div class="text-xs text-green-400 font-bold">¡Cotización gratis!</div>
+                        </div>
+                        <a href="https://wa.me/5213151149026?text=🕊️ Hola! Necesito un ACTA DE DEFUNCIÓN certificada. ¿Cuál es el precio para mi estado?" 
+                           class="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-emerald-500 hover:to-green-500 px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Cotizar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee Section -->
+            <div class="bg-gradient-to-r from-gold/20 to-orange-500/20 border-2 border-gold/30 rounded-2xl p-8 text-center neon-border">
+                <div class="flex items-center justify-center space-x-4 mb-6">
+                    <i class="fas fa-qrcode text-gold text-4xl animate-pulse"></i>
+                    <i class="fab fa-whatsapp text-green-500 text-4xl animate-bounce"></i>
+                    <i class="fas fa-shield-alt text-primary text-4xl animate-pulse"></i>
+                </div>
+                <h4 class="text-3xl font-black mb-4 gradient-text">🔥 GARANTÍA TOTAL 🔥</h4>
+                <div class="grid md:grid-cols-3 gap-6 text-lg">
+                    <div>
+                        <i class="fas fa-clock text-accent text-2xl mb-2"></i>
+                        <p><strong>Entrega en 15-30 minutos</strong><br>O te devolvemos tu dinero</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-certificate text-primary text-2xl mb-2"></i>
+                        <p><strong>100% Legal y Certificado</strong><br>Con código QR oficial</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-headset text-secondary text-2xl mb-2"></i>
+                        <p><strong>Soporte 24/7</strong><br>Atención inmediata por WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Digitales Premium -->
+    <section class="py-20 bg-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-purple-500/20 text-purple-400 px-4 py-2 rounded-full border border-purple-500/30 mb-6 animate-pulse">
+                    <i class="fas fa-crown"></i>
+                    <span class="font-semibold">SERVICIOS PREMIUM A PRECIOS INCREÍBLES</span>
+                </div>
+                <h3 class="text-5xl font-black mb-6 gradient-text flex items-center justify-center space-x-4">
+                    <span class="text-5xl">💻</span>
+                    <span>Cuentas y Suscripciones Digitales</span>
+                </h3>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    🎯 <strong>Hasta 80% de descuento</strong> • 🔒 <strong>Cuentas 100% funcionales</strong> • ⚡ <strong>Activación inmediata</strong>
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Netflix Premium -->
+                <div class="bg-gradient-to-br from-dark-light to-red-900/20 border-2 border-red-500/30 rounded-2xl p-6 card-hover neon-border relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">
+                        ¡TOP VENTAS!
+                    </div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <span class="text-white font-black text-xl">N</span>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">Netflix Premium</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold">4K UHD</span>
+                                <span class="bg-gold/20 text-gold px-2 py-1 rounded text-xs font-bold">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Calidad 4K Ultra HD</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ 4 pantallas simultáneas</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Catálogo completo</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $299</div>
+                            <div class="text-xl font-black price-flash">$65 MXN</div>
+                            <div class="text-xs text-green-400 font-bold">¡Ahorra $234!</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=🎬 ¡Hola! Quiero NETFLIX PREMIUM 4K por solo $65 MXN. ¿Está disponible?" 
+                       class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🔥 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- Amazon Prime -->
+                <div class="bg-gradient-to-br from-dark-light to-orange-900/20 border-2 border-orange-500/30 rounded-2xl p-6 card-hover neon-border relative">
+                    <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        COMPLETO
+                    </div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fab fa-amazon text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">Amazon Prime</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-orange-500/20 text-orange-400 px-2 py-1 rounded text-xs font-bold">Video + Music</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Prime Video completo</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Amazon Music incluido</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Envíos gratis Amazon</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $199</div>
+                            <div class="text-xl font-black text-orange-400">$89 MXN</div>
+                            <div class="text-xs text-green-400 font-bold">¡Ahorra $110!</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=📦 ¡Hola! Quiero AMAZON PRIME completo por $89 MXN. ¿Cómo funciona?" 
+                       class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🛒 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- Spotify Premium -->
+                <div class="bg-gradient-to-br from-dark-light to-green-900/20 border-2 border-green-500/30 rounded-2xl p-6 card-hover neon-border">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fab fa-spotify text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">Spotify Premium</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-bold">Sin Anuncios</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Música sin anuncios</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Descargas offline</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Calidad máxima</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $115</div>
+                            <div class="text-xl font-black text-green-400">$45 MXN</div>
+                            <div class="text-xs text-green-400 font-bold">¡Ahorra $70!</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=🎵 ¡Hola! Quiero SPOTIFY PREMIUM por $45 MXN. ¿Está disponible?" 
+                       class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🎧 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- ChatGPT Plus -->
+                <div class="bg-gradient-to-br from-dark-light to-emerald-900/20 border-2 border-emerald-500/30 rounded-2xl p-6 card-hover neon-border relative">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-bold animate-pulse">
+                        ¡NUEVO!
+                    </div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-robot text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">ChatGPT Plus</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-xs font-bold">GPT-4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ GPT-4 completo</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Sin límites de uso</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Acceso prioritario</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $400</div>
+                            <div class="text-xl font-black text-emerald-400">$350 MXN</div>
+                            <div class="text-xs text-green-400 font-bold">¡Ahorra $50!</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=🤖 ¡Hola! Quiero CHATGPT PLUS con GPT-4 por $350 MXN. ¿Cómo lo activo?" 
+                       class="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🧠 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- Más servicios con el mismo estilo premium... -->
+                <!-- HBO Max -->
+                <div class="bg-gradient-to-br from-dark-light to-purple-900/20 border-2 border-purple-500/30 rounded-2xl p-6 card-hover neon-border">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <span class="text-white font-black text-sm">HBO</span>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">HBO Max</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs font-bold">4K</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Contenido exclusivo</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Estrenos simultáneos</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $149</div>
+                            <div class="text-xl font-black text-purple-400">$75 MXN</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=🎭 ¡Hola! Quiero HBO MAX por $75 MXN. ¿Está disponible?" 
+                       class="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🎬 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- Disney+ -->
+                <div class="bg-gradient-to-br from-dark-light to-blue-900/20 border-2 border-blue-500/30 rounded-2xl p-6 card-hover neon-border">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <span class="text-white font-black text-lg">D+</span>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">Disney+</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-bold">Familia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Disney, Marvel, Star Wars</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Contenido familiar</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $159</div>
+                            <div class="text-xl font-black text-blue-400">$55 MXN</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=🏰 ¡Hola! Quiero DISNEY+ por $55 MXN. ¿Incluye todo el contenido?" 
+                       class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        🎪 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- IPTV -->
+                <div class="bg-gradient-to-br from-dark-light to-indigo-900/20 border-2 border-indigo-500/30 rounded-2xl p-6 card-hover neon-border relative">
+                    <div class="absolute top-3 right-3 bg-indigo-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        +5000 CANALES
+                    </div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-tv text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">IPTV Premium</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-indigo-500/20 text-indigo-400 px-2 py-1 rounded text-xs font-bold">Mundial</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ +5000 canales mundiales</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Deportes, películas, series</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio normal: $300</div>
+                            <div class="text-xl font-black text-indigo-400">$120 MXN</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=📺 ¡Hola! Quiero IPTV con +5000 canales por $120 MXN. ¿Cómo funciona?" 
+                       class="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        📡 Comprar Ahora
+                    </a>
+                </div>
+
+                <!-- YouTube Premium -->
+                <div class="bg-gradient-to-br from-dark-light to-red-900/20 border-2 border-red-500/30 rounded-2xl p-6 card-hover neon-border">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fab fa-youtube text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-lg">YouTube Premium</h4>
+                            <div class="flex space-x-1">
+                                <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs font-bold">Sin Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4 text-sm">
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ Sin anuncios</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-green-400">
+                            <i class="fas fa-check text-xs"></i>
+                            <span>✅ YouTube Music incluido</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="text-xs text-gray-400 line-through">Precio oficial: $179</div>
+                            <div class="text-xl font-black text-red-400">$90 MXN</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5213151149026?text=📹 ¡Hola! Quiero YOUTUBE PREMIUM por $90 MXN. ¿Incluye YouTube Music?" 
+                       class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 px-4 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl text-center block">
+                        ▶️ Comprar Ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Guarantee for Digital Services -->
+            <div class="mt-12 bg-gradient-to-r from-primary/20 to-secondary/20 border-2 border-primary/30 rounded-2xl p-8 text-center neon-border">
+                <h4 class="text-3xl font-black mb-6 gradient-text">🛡️ GARANTÍA PREMIUM 🛡️</h4>
+                <div class="grid md:grid-cols-4 gap-6 text-lg">
+                    <div>
+                        <i class="fas fa-rocket text-accent text-3xl mb-3"></i>
+                        <p><strong>Activación Inmediata</strong><br>En menos de 5 minutos</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-shield-check text-primary text-3xl mb-3"></i>
+                        <p><strong>100% Funcional</strong><br>O te devolvemos tu dinero</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-sync text-secondary text-3xl mb-3"></i>
+                        <p><strong>Reemplazo Gratis</strong><br>Si hay algún problema</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-headset text-gold text-3xl mb-3"></i>
+                        <p><strong>Soporte 24/7</strong><br>Siempre estamos aquí</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-red-600 via-primary to-secondary relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-5xl font-black mb-6 animate-pulse">⏰ ¡ÚLTIMAS HORAS! ⏰</h3>
+                <p class="text-2xl mb-8 font-bold">
+                    🔥 Precios especiales terminan pronto 🔥<br>
+                    <span class="text-gold">¡No te quedes sin tu servicio favorito!</span>
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="bg-black/30 backdrop-blur-sm rounded-2xl p-6 mb-8 inline-block">
+                    <div class="text-sm text-gray-300 mb-2">Oferta termina en:</div>
+                    <div class="flex space-x-4 text-3xl font-black" id="countdown">
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">23</div>
+                            <div class="text-xs mt-1">HORAS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">45</div>
+                            <div class="text-xs mt-1">MIN</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">12</div>
+                            <div class="text-xs mt-1">SEG</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <a href="https://wa.me/5213151149026?text=🔥 ¡HOLA! Quiero aprovechar la OFERTA ESPECIAL antes de que termine. ¿Qué servicios tienes disponibles?" 
+                       class="inline-flex items-center space-x-3 bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-black text-xl transition-all duration-300 shadow-2xl hover:shadow-white/50 animate-bounce-slow">
+                        <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+                        <span>🚀 APROVECHAR OFERTA AHORA</span>
+                    </a>
+                    <p class="text-sm opacity-90">⚡ Respuesta inmediata garantizada • 🎯 Asesoría personalizada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-dark-light py-16 border-t border-primary/20">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center animate-glow">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-black gradient-text">Weavy Plus</h4>
+                        <p class="text-gray-400">Tu socio digital confiable</p>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+                    <div class="bg-dark border border-primary/20 rounded-xl p-6">
+                        <i class="fas fa-shield-alt text-primary text-3xl mb-4"></i>
+                        <h5 class="font-bold text-lg mb-2">100% Seguro</h5>
+                        <p class="text-gray-400 text-sm">Todos nuestros servicios son completamente legales y seguros</p>
+                    </div>
+                    <div class="bg-dark border border-accent/20 rounded-xl p-6">
+                        <i class="fas fa-clock text-accent text-3xl mb-4"></i>
+                        <h5 class="font-bold text-lg mb-2">Entrega Rápida</h5>
+                        <p class="text-gray-400 text-sm">Documentos en 30 min, servicios digitales en 5 min</p>
+                    </div>
+                    <div class="bg-dark border border-gold/20 rounded-xl p-6">
+                        <i class="fas fa-star text-gold text-3xl mb-4"></i>
+                        <h5 class="font-bold text-lg mb-2">+500 Clientes</h5>
+                        <p class="text-gray-400 text-sm">Miles de clientes satisfechos nos respaldan</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-500 mb-4">
+                        © 2024 Weavy Plus. Todos los derechos reservados.
+                    </p>
+                    <div class="flex items-center justify-center space-x-2 text-green-400">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="font-bold">WhatsApp: 315 114 9026</span>
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse ml-2"></div>
+                        <span class="text-sm">En línea ahora</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced WhatsApp Float Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div class="relative">
+            <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full animate-bounce font-bold">
+                ¡OFERTA!
+            </div>
+            <a href="https://wa.me/5213151149026" target="_blank" 
+               class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/50 transition-all duration-300 animate-pulse-slow">
+                <i class="fab fa-whatsapp text-white text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe cards
+            document.querySelectorAll('.card-hover').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(card);
+            });
+
+            // Countdown timer
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0);
+                const distance = tomorrow.getTime() - now;
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const countdownElement = document.getElementById('countdown');
+                if (countdownElement) {
+                    countdownElement.innerHTML = `
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">${hours.toString().padStart(2, '0')}</div>
+                            <div class="text-xs mt-1">HORAS</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">${minutes.toString().padStart(2, '0')}</div>
+                            <div class="text-xs mt-1">MIN</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white/20 rounded-lg px-3 py-2">${seconds.toString().padStart(2, '0')}</div>
+                            <div class="text-xs mt-1">SEG</div>
+                        </div>
+                    `;
+                }
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Add click tracking for buttons
+            document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add a small delay to show click effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9588d49407a6b6e5',t:'MTc1MTQwMzYwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
